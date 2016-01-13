@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>DIFF.js Demo</title>
+  <link rel="stylesheet" type="text/css" href="../dist/diffjs.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro"/>
+
+  <style type="text/css">
+
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-size: 12px;
+      font-family: 'Source Code Pro', monospace;
+      padding: 20px;
+      margin: 0;
+    }
+
+    #diffoutput {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+
+
+</head>
+<body>
+
+<div id="diffoutput"></div>
+
+<script type="text/javascript" src="../dist/diff.js"></script>
+<script type="text/javascript">
+  var options = {
+    targetElement: document.getElementById('diffoutput'),
+    oldText: 'This is a text',
+    newText: 'This is a test',
+    cutOffSize: 2,
+    diffWords: true,
+    footerText: 'coders.build diff tool',
+    layout: 'unified'
+  };
+
+  diffJs.render(options);
+
+</script>
+
+</body>
+</html>

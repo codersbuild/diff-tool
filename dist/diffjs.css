@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+table.diff {
+  border-collapse: collapse;
+  border: 1px solid #d8d8d8;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+table.diff * {
+  font-family: 'Source Code Pro', monospace;
+}
+
+table.diff tbody th {
+  background: #fff;
+  font-size: 11px;
+  font-weight: normal;
+  border: 1px solid #d8d8d8;
+  border-top: 0;
+  border-bottom: 0;
+  color: rgba(0,0,0,0.3);
+  padding: .3em .5em .1em 2em;
+  text-align: right;
+  vertical-align: top;
+}
+
+table.split tbody th:nth-child(1) {
+  width: 20px;
+}
+
+table.split tbody th:nth-child(3) {
+  width: 20px;
+}
+
+table.unified tbody th:nth-child(1) {
+  width: 20px;
+}
+
+table.unified tbody th:nth-child(2) {
+  width: 20px;
+}
+
+table.split tbody tr .empty:nth-child(1) {
+  background: red;
+}
+
+table.diff thead {
+  border-bottom: 1px solid #d8d8d8;
+  background: #f7f7f7;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+table.diff thead tr {
+  height: 30px;
+}
+
+table.diff thead th.texttitle {
+  text-align: left;
+  text-indent: 10px;
+  color: #333
+}
+
+table.diff tbody td {
+  padding: 0px .4em;
+  padding-top: .4em;
+  vertical-align: top;
+}
+
+table.diff .empty {
+  background-color: #f4f7fb;
+}
+
+table.diff .replace {
+  background-color: #f8eec7
+}
+
+table.diff .delete {
+  background-color: #ffecec;
+}
+
+table.diff .skip {
+  background-color: #f4f7fb;
+  border: 0;
+}
+
+table.diff th.skip {
+  background-color: #f4f7fb;
+  border: 1px solid #d2dff0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+table.diff .insert {
+  background-color: #eaffea
+}
+
+table.diff th.options {
+  text-align: left;
+  border-top: 1px solid #d8d8d8;
+  background: #f7f7f7;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+table.diff th.options a {
+  color: #BBB;
+  cursor: pointer;
+  line-height: 30px;
+  float: right;
+  text-transform: uppercase;
+}
+table.diff th.options a.selected {
+  color: #333;
+}
+table.diff th.options a {
+  padding: 0 4px;
+}
+
+table.diff ins.diff {
+  background-color: #a6f3a6;
+  text-decoration: none;
+}
+
+table.diff del.diff {
+  background-color: #f8cbcb;
+  text-decoration: none;
+}

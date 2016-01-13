@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>DIFF.js Demo</title>
+  <link rel="stylesheet" type="text/css" href="../dist/diffjs.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro"/>
+
+  <style type="text/css">
+
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-size: 12px;
+      font-family: 'Source Code Pro', monospace;
+      padding: 20px;
+      margin: 0;
+    }
+
+    #diffoutput {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+
+
+</head>
+<body>
+
+<div id="diffoutput"></div>
+
+<script type="text/javascript" src="../dist/diff.js"></script>
+<script type="text/javascript">
+  var options = {
+    targetElement: document.getElementById('diffoutput'),
+    oldText: '<!doctype html>' +
+    '\n<html lang="en">' +
+    '\n\t<head>' +
+    '\n\t\t<meta charset="utf-8">' +
+    '\n\t\t<title>Sample HTML File</title>' +
+    '\n\t\t<meta name="description" content="Sample HTML File">' +
+    '\n\t\t<link rel="stylesheet" href="css/styles.css?v=1.0">' +
+    '\n\t\t<!--[if lt IE 9]>' +
+    '\n\t\t\t<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"><\/script>' +
+    '\n\t\t<![endif]-->' +
+    '\n\t</head>' +
+    '\n\t<body>' +
+    '\n\t\t<script src="js/scripts.js"><\/script>' +
+    '\n\t</body>' +
+    '\n</html>',
+    newText: '<!doctype html>' +
+    '\n<html lang="en">' +
+    '\n\t<head>' +
+    '\n\t\t<meta charset="utf-8">' +
+    '\n\t\t<title>HTML File</title>' +
+    '\n\t\t<meta name="description" content="HTML File">' +
+    '\n\t\t<meta name="author" content="Coders Build">' +
+    '\n\t\t<link rel="stylesheet" href="css/styles.css?v=1.0">' +
+    '\n\t\t<!--[if lt IE 9]>' +
+    '\n\t\t\t<script src="http://code.jquery.com/jquery-2.2.0.min.js"><\/script>' +
+    '\n\t\t<![endif]-->' +
+    '\n\t</head>' +
+    '\n\t<body>' +
+    '\n\t\t<script src="js/scripts.js"><\/script>' +
+    '\n\t</body>' +
+    '\n</html>',
+    cutOffSize: 2,
+    diffWords: true,
+    footerText: 'coders.build diff tool',
+    layout: 'unified'
+  };
+
+  diffJs.render(options);
+
+</script>
+
+</body>
+</html>

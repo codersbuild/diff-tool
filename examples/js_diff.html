@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>DIFF.js Demo</title>
+  <link rel="stylesheet" type="text/css" href="../dist/diffjs.css"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro"/>
+
+  <style type="text/css">
+
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      font-size: 12px;
+      font-family: 'Source Code Pro', monospace;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0.5em 0 0.1em;
+      text-align: center;
+    }
+
+    .textInput {
+      display: block;
+      width: 49%;
+    }
+
+    .textInput:nth-child(1){
+      float: left;
+    }
+    .textInput:nth-child(2){
+      float: right;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: 'Source Code Pro', monospace;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .clearfix {
+
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+    #diffoutput {
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+
+
+</head>
+<body>
+
+<div class="textInput">
+  <h2>Old JS</h2>
+    <textarea id="oldText">
+function initHighlight(block, cls) {
+  if (cls.search(/\bno\-highlight\b/) != -1){
+      return process(block, true, 0x0F) + ' class=""';
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined) {
+      return /\d+[\s/]/g;
+    }
+  }
+}</textarea>
+</div>
+
+<div class="textInput spacer">
+  <h2>New JS</h2>
+    <textarea id="newText">
+function initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1) {
+      return process(block, true, 0x0F) + ' class=""';
+    }
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined) {
+      return /\d+[\s/]/g;
+    }
+  }
+}</textarea>
+</div>
+
+<div class="clearfix"></div>
+
+<div id="diffoutput"></div>
+
+<script type="text/javascript" src="../dist/diff.js"></script>
+<script type="text/javascript">
+
+  var oldText = document.getElementById('oldText');
+  var newText = document.getElementById('newText');
+
+  var options = {
+    targetElement: document.getElementById('diffoutput'),
+    oldText: oldText.value,
+    newText: newText.value,
+    oldTextLabel: 'Old JS',
+    newTextLabel: 'New JS',
+    cutOffSize: 2,
+    diffWords: true,
+    footerText: 'coders.build diff tool',
+    layout: 'unified',
+    onLayoutChange: function(){
+      this.oldText = oldText.value;
+      this.newText = newText.value;
+    }
+  };
+
+  function updateDiff(options){
+    options.oldText = oldText.value;
+    options.newText = newText.value;
+    diffJs.render(options);
+  }
+
+  oldText.onkeyup = function(){ updateDiff(options); };
+  newText.onkeyup = function(){ updateDiff(options); };
+
+  diffJs.render(options);
+
+</script>
+
+</body>
+</html>
