@@ -5,6 +5,14 @@ This project is a heavily modified version of [jsdifflib](https://github.com/cem
 
 We've also added a few configuration options to make working with this a littler easier.
 
+Demos:
+---
+
+* [HTML Diff](https://codersbuild.github.io/tools/diff/raw_html.html)
+* [CSS Diff](https://codersbuild.github.io/tools/diff/js_diff.html)
+* [Javascript Diff](https://codersbuild.github.io/tools/diff/css_diff.html)
+* [Text Diff](https://codersbuild.github.io/tools/diff/raw_text.html)
+
 Config Options:
 ---
 
