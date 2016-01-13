@@ -9,8 +9,8 @@ Demos:
 ---
 
 * [HTML Diff](https://codersbuild.github.io/tools/diff/raw_html.html)
-* [CSS Diff](https://codersbuild.github.io/tools/diff/js_diff.html)
-* [Javascript Diff](https://codersbuild.github.io/tools/diff/css_diff.html)
+* [CSS Diff](https://codersbuild.github.io/tools/diff/css_diff.html)
+* [Javascript Diff](https://codersbuild.github.io/tools/diff/js_diff.html)
 * [Text Diff](https://codersbuild.github.io/tools/diff/raw_text.html)
 
 Config Options:
