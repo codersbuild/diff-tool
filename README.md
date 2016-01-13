@@ -9,7 +9,7 @@ Config Options:
 ---
 
 |Option|Type|Default|Description|
-|---|---|---|
+|---|---|---|---|
 |`targetElement`|_Object_|NULL|DOM Element where the DIFF is Rendered.|
 |`oldText`|_String_|NULL|This is the Old Text we are using as a Base.|
 |`newText`|_String_|NULL|This is the New Text we are comparing against the Base.|
